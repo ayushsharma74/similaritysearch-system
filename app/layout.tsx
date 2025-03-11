@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SearchInput from "@/components/SearchInput";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <MaxWidthWrapper>
+          <SearchInput />
+
+          {children}
+        </MaxWidthWrapper>
       </body>
     </html>
   );
