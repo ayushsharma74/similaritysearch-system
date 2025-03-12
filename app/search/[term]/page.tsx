@@ -3,10 +3,11 @@ import { db } from "@/db";
 import { Movie } from "@/types";
 
 export default async function SearchPage({
-  params: { term },
+  params,
 }: {
-  params: { term: string };
+  params: Promise<{ term: string }>;
 }) {
+  const { term } = await params;
   const movies = db.collection("movies");
 
   const similarMovies = (await movies
