@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SearchInput from "@/components/SearchInput";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <SearchInput />
 
           {children}
+          <Footer />
         </MaxWidthWrapper>
       </body>
     </html>

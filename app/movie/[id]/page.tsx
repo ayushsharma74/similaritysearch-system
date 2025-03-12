@@ -1,7 +1,6 @@
 import { db } from "@/db";
 import { Movie, SimilarMovie } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
 
@@ -43,14 +42,6 @@ export default async function MoviePage({ params }: { params: Promise<{ id: stri
                     <p>{movie.$vectorize}</p>
                 </div>
             </div>
-
-            <h1>SIMILAR MOVIES</h1>
-            {similarMovies.map((movie) => (
-                <div key={movie._id}>
-                    <Link href={`/movie/${movie._id}`}>{movie.Title}</Link>
-                    <p>{movie.$similarity}</p>
-                </div>
-            ))}
         </div>
     )
 

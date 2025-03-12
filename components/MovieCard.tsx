@@ -7,7 +7,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
     <Link
       href={`/movie/${movie._id}`}
       key={movie._id}
-      className="flex flex-col gap-5 items-center flex-wrap w-1/4"
+      className="flex flex-col gap-5 items-center flex-wrap w-1/4 hover:scale-105 transition-all"
     >
       <Image
         className="rounded-xl"
